@@ -1,4 +1,4 @@
-package com.javacodegeeks.quartz;
+package com.poc.quartz;
 
 import java.io.Serializable;
 
@@ -23,7 +23,7 @@ public class QuartzSchedulerConfigurationExample implements Serializable  {
 	public static void main(String[] args) throws Exception {
 		QuartzSchedulerConfigurationExample quartzSchedulerExample = new QuartzSchedulerConfigurationExample();
 		Scheduler scheduler = quartzSchedulerExample.createAndStartScheduler();
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 1; i++) {
 			quartzSchedulerExample.fireJob(scheduler, Job1.class);
 			quartzSchedulerExample.fireJob(scheduler, Job2.class);
 			quartzSchedulerExample.fireJob(scheduler, Job3.class);
@@ -56,7 +56,7 @@ public class QuartzSchedulerConfigurationExample implements Serializable  {
 
 		JobDetail jobDetail = jobBuilder
 				.usingJobData("example",
-						"com.javacodegeeks.quartz.QuartzSchedulerExample")
+						"com.poc.quartz.QuartzSchedulerExample")
 				.usingJobData(data).build();
 
 		// Trigger the job to run now, and then every 40 seconds

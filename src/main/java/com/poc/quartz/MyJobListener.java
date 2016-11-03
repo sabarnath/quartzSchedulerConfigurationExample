@@ -1,4 +1,4 @@
-package com.javacodegeeks.quartz;
+package com.poc.quartz;
 
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
